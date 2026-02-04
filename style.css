@@ -189,8 +189,102 @@ body {
 /* =======================
    RESPONSIVE
 ======================= */
+/* =======================
+   MOBILE OPTIMIZATION
+======================= */
 @media (max-width: 900px) {
+
+  /* HERO tighter */
+  .hero {
+    padding: 48px 16px 36px;
+  }
+
+  .hero-icon {
+    font-size: 36px;
+    margin-bottom: 6px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  /* PAGE layout */
   .page {
     grid-template-columns: 1fr;
+    margin: 28px auto;
+    gap: 18px;
+    padding: 0 14px;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sidebar input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  #menuList li {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* CONTENT */
+  .content {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  /* THEMES */
+  .theme {
+    margin-bottom: 60px; /* was 100px */
+  }
+
+  .theme h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  /* CHAPTERS */
+  .chapter {
+    margin-top: 18px;
+  }
+
+  .chapter-btn {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+
+  .toggle-text {
+    font-size: 13px;
+  }
+
+  .chapter-content {
+    padding: 16px 18px;
+    margin-top: 10px;
+    border-radius: 12px;
+  }
+
+  .chapter-content ul {
+    padding-left: 16px;
+  }
+
+  .chapter-content li {
+    margin-bottom: 8px;
+    font-size: 14px;
   }
 }
