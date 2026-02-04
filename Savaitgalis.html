@@ -17,7 +17,6 @@
  <aside class="sidebar">
   <h2>Skyriai</h2>
 
-  <!-- SEARCH ON TOP -->
   <input
     type="text"
     id="themeSearch"
@@ -25,13 +24,10 @@
     autocomplete="off"
   >
 
-  <!-- ONE MENU LIST ONLY -->
-  <ul id="menuList">
-    <li data-target="sazines-patikrinimas">
-      🧠 Sąžinės patikrinimas
-    </li>
-  </ul>
+  <!-- JS ČIA AUTOMATIŠKAI SUDĖS TEMAS -->
+  <ul id="menuList"></ul>
 </aside>
+
 
 
   <!-- CONTENT -->
@@ -169,48 +165,173 @@
   </div>
 
 </section>
+<section class="theme" id="veni-sancte-spiritus">
+  <h2>🕊️ Veni Sancte Spiritus</h2>
+
+  <!-- LATIN -->
+  <div class="chapter">
+    <button class="chapter-btn">Veni Sancte Spiritus (lotyniškai)</button>
+    <div class="chapter-content">
+      <p>
+        <strong>Veni, Sancte Spiritus,</strong><br>
+        et emitte caelitus<br>
+        lucis tuae radium.<br><br>
+
+        Veni, pater pauperum,<br>
+        veni, dator munerum,<br>
+        veni, lumen cordium.<br><br>
+
+        Consolator optime,<br>
+        dulcis hospes animae,<br>
+        dulce refrigerium.<br><br>
+
+        In labore requies,<br>
+        in aestu temperies,<br>
+        in fletu solatium.<br><br>
+
+        O lux beatissima,<br>
+        reple cordis intima<br>
+        tuorum fidelium.<br><br>
+
+        Sine tuo numine,<br>
+        nihil est in homine,<br>
+        nihil est innoxium.<br><br>
+
+        Lava quod est sordidum,<br>
+        riga quod est aridum,<br>
+        sana quod est saucium.<br><br>
+
+        Flecte quod est rigidum,<br>
+        fove quod est frigidum,<br>
+        rege quod est devium.<br><br>
+
+        Da tuis fidelibus,<br>
+        in te confidentibus,<br>
+        sacrum septenarium.<br><br>
+
+        Da virtutis meritum,<br>
+        da salutis exitum,<br>
+        da perenne gaudium. Amen.
+      </p>
+    </div>
+  </div>
+
+  <!-- LITHUANIAN -->
+  <div class="chapter">
+  <button class="chapter-btn">Ateik, Šventoji Dvasia (lietuviškai)</button>
+  <div class="chapter-content">
+    <p>
+      <strong>DVASIA, VIEŠPATIE, ATEIK,</strong><br>
+      spindulių dangaus mums teik,<br>
+      žemės klystkelius nušviesk.<br><br>
+
+      Tėve vargstančių nuženk,<br>
+      savo dovanas dalink,<br>
+      mūsų dvasią atgaivink!<br><br>
+
+      Sielų Tu ramintojas,<br>
+      svečias atlankytojas,<br>
+      mielas atgaivintojas.<br><br>
+
+      Darbuose Tu – poilsis,<br>
+      kaitroje Tu – atvėsis,<br>
+      Tu – paguoda liūdesy.<br><br>
+
+      O šviesybe amžina,<br>
+      skaidrink sielos gilumą,<br>
+      stiprinki tikėjimą.<br><br>
+
+      Be Tavųjų dovanų<br>
+      viskas žmoguje skurdu,<br>
+      viskas – atvira žaizda.<br><br>
+
+      Nuvalyk, kas sutepta,<br>
+      laistyk, kas išdeginta,<br>
+      gydyk tai, kas sužeista.<br><br>
+
+      Atitrauk mus nuo klaidų,<br>
+      dvasios šalty duok jėgų,<br>
+      tiesink vingius mūs takų.<br><br>
+
+      Duok mums, mylintiems Tave,<br>
+      tikintiems Tava galia,<br>
+      dovanas septynerias.<br><br>
+
+      Duok dorybių atpildą,<br>
+      siųsk laimingą pabaigą,<br>
+      kviesk į džiaugsmą amžiną. Amen.
+    </p>
+  </div>
+</div>
+
+
+</section>
+
 
 
   </main>
 </div>
 
 <script>
+  /* ===============================
+     BUILD MENU FROM THEMES
+  =============================== */
+
   const searchInput = document.getElementById("themeSearch");
-  const menuItems = document.querySelectorAll("#menuList li");
+  const menuList = document.getElementById("menuList");
 
-  // FILTER MENU ITEMS
+  // Read all themes from page
+  const themes = [...document.querySelectorAll(".theme")].map(theme => ({
+    id: theme.id,
+    title: theme.querySelector("h2").innerText
+  }));
+
+  // Render menu (optionally filtered)
+  function renderMenu(filter = "") {
+    menuList.innerHTML = "";
+
+    themes
+      .filter(t =>
+        t.title.toLowerCase().includes(filter.toLowerCase())
+      )
+      .forEach(t => {
+        const li = document.createElement("li");
+        li.textContent = t.title;
+        li.dataset.target = t.id;
+
+        li.addEventListener("click", () => {
+          document
+            .getElementById(t.id)
+            .scrollIntoView({ behavior: "smooth" });
+        });
+
+        menuList.appendChild(li);
+      });
+  }
+
+  // Initial menu load
+  renderMenu();
+
+  /* ===============================
+     SEARCH FILTER
+  =============================== */
+
   searchInput.addEventListener("input", () => {
-    const value = searchInput.value.toLowerCase();
-
-    menuItems.forEach(item => {
-      item.style.display = item.textContent
-        .toLowerCase()
-        .includes(value)
-        ? "block"
-        : "none";
-    });
+    renderMenu(searchInput.value);
   });
 
-  // ENTER = SCROLL TO FIRST VISIBLE
+  // ENTER = scroll to first visible
   searchInput.addEventListener("keydown", e => {
     if (e.key === "Enter") {
-      const firstVisible = [...menuItems].find(
-        item => item.style.display !== "none"
-      );
-      if (firstVisible) firstVisible.click();
+      const firstItem = menuList.querySelector("li");
+      if (firstItem) firstItem.click();
     }
   });
 
-  // CLICK → SCROLL
-  menuItems.forEach(item => {
-    item.addEventListener("click", () => {
-      document
-        .getElementById(item.dataset.target)
-        .scrollIntoView({ behavior: "smooth" });
-    });
-  });
+  /* ===============================
+     ACCORDION (UNCHANGED)
+  =============================== */
 
-  /* ACCORDION (unchanged) */
   document.querySelectorAll(".chapter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       btn.classList.toggle("active");
@@ -218,6 +339,7 @@
     });
   });
 </script>
+
 
 
 </body>

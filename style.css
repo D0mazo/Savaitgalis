@@ -1,3 +1,22 @@
+/* =======================
+   COLOR PALETTE
+======================= */
+:root {
+  --black-900: #0b0b0b;
+  --black-800: #121212;
+  --black-700: #1a1a1a;
+
+  --yellow-500: #f5c400;
+  --yellow-400: #ffd84d;
+  --yellow-300: #ffe680;
+
+  --text-main: #f5f5f5;
+  --text-muted: #cfcfcf;
+}
+
+/* =======================
+   RESET
+======================= */
 * {
   box-sizing: border-box;
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
@@ -5,51 +24,64 @@
 
 body {
   margin: 0;
-  background: #f6f8fb;
-  color: #111;
+  background: linear-gradient(180deg, var(--black-900), var(--black-800));
+  color: var(--text-main);
+  line-height: 1.7;
 }
 
-/* TOP */
+/* =======================
+   TOP BAR
+======================= */
 .topbar {
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 18px 0;
+  background: linear-gradient(90deg, #000, var(--black-700));
+  border-bottom: 3px solid var(--yellow-500);
+  padding: 22px 0;
 }
 
 .topbar h1 {
   margin: 0;
   text-align: center;
-  font-size: 26px;
+  font-size: 28px;
+  color: var(--yellow-500);
+  letter-spacing: 1px;
 }
 
-/* PAGE */
+/* =======================
+   PAGE LAYOUT
+======================= */
 .page {
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 40px auto;
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: 24px;
+  gap: 28px;
   padding: 0 20px;
 }
 
-/* SIDEBAR */
+/* =======================
+   SIDEBAR
+======================= */
 .sidebar {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid #e5e7eb;
+  background: linear-gradient(180deg, var(--black-700), var(--black-900));
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid #222;
 }
 
 .sidebar h2 {
   margin-top: 0;
+  color: var(--yellow-500);
+  font-size: 20px;
 }
 
 .sidebar input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  background: var(--black-900);
+  border: 1px solid #333;
+  color: var(--text-main);
 }
 
 .sidebar ul {
@@ -59,48 +91,95 @@ body {
 }
 
 .sidebar li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
+  padding: 12px;
+  border-radius: 10px;
   cursor: pointer;
+  margin-bottom: 6px;
+  transition: background 0.2s, color 0.2s;
 }
 
 .sidebar li:hover {
-  color: #2563eb;
+  background: rgba(245,196,0,0.12);
+  color: var(--yellow-400);
 }
 
-/* CONTENT */
+/* =======================
+   CONTENT
+======================= */
 .content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  border: 1px solid #e5e7eb;
+  background: var(--black-700);
+  border-radius: 18px;
+  padding: 36px;
+  border: 1px solid #222;
 }
 
+/* =======================
+   THEMES
+======================= */
 .theme h2 {
   margin-top: 0;
+  font-size: 26px;
+  color: var(--yellow-500);
 }
 
-/* ACCORDION */
+/* =======================
+   CHAPTERS (ACCORDION)
+======================= */
 .chapter {
-  margin-top: 16px;
+  margin-top: 26px;
 }
 
 .chapter-btn {
   width: 100%;
-  padding: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #1a1a1a, #141414);
+  border: 1px solid #333;
+  color: var(--yellow-400);
   font-size: 16px;
-  background: #f3f4f6;
-  border: none;
   text-align: left;
   cursor: pointer;
-  border-radius: 6px;
+}
+
+.chapter-btn:hover {
+  background: #1f1f1f;
 }
 
 .chapter-content {
   display: none;
-  padding: 12px;
+  margin-top: 12px;
+  padding: 18px 22px;
+  background: var(--black-800);
+  border-radius: 14px;
+  border-left: 4px solid var(--yellow-500);
 }
 
 .chapter-content.open {
   display: block;
+}
+
+/* =======================
+   TEXT FORMATTING
+======================= */
+.chapter-content p {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.chapter-content ul {
+  padding-left: 18px;
+}
+
+.chapter-content li {
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
 }
