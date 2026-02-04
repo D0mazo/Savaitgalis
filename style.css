@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f8fb;
+  color: #111;
+}
+
+/* TOP */
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 18px 0;
+}
+
+.topbar h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 26px;
+}
+
+/* PAGE */
+.page {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  padding: 0 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  color: #2563eb;
+}
+
+/* CONTENT */
+.content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+}
+
+.theme h2 {
+  margin-top: 0;
+}
+
+/* ACCORDION */
+.chapter {
+  margin-top: 16px;
+}
+
+.chapter-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #f3f4f6;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.chapter-content {
+  display: none;
+  padding: 12px;
+}
+
+.chapter-content.open {
+  display: block;
+}

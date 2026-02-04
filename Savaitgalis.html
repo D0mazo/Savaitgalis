@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <title>Šeštadienis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Šeštadienis</h1>
+</header>
+
+<div class="page">
+
+ <aside class="sidebar">
+  <h2>Skyriai</h2>
+
+  <!-- SEARCH ON TOP -->
+  <input
+    type="text"
+    id="themeSearch"
+    placeholder="Ieškoti skyriaus..."
+    autocomplete="off"
+  >
+
+  <!-- ONE MENU LIST ONLY -->
+  <ul id="menuList">
+    <li data-target="sazines-patikrinimas">
+      🧠 Sąžinės patikrinimas
+    </li>
+  </ul>
+</aside>
+
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section class="theme" id="sazines-patikrinimas">
+      <h2>🧠 Sąžinės patikrinimas</h2>
+
+      <div class="chapter">
+        <button class="chapter-btn">Nuodėmės Dievo atžvilgiu</button>
+        <div class="chapter-content">
+          <p>Turinys...</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <button class="chapter-btn">Nuodėmės artimo atžvilgiu</button>
+        <div class="chapter-content">
+          <p>Turinys...</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <button class="chapter-btn">Nuodėmės savęs atžvilgiu</button>
+        <div class="chapter-content">
+          <p>Turinys...</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const searchInput = document.getElementById("themeSearch");
+  const menuItems = document.querySelectorAll("#menuList li");
+
+  // FILTER MENU ITEMS
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase();
+
+    menuItems.forEach(item => {
+      item.style.display = item.textContent
+        .toLowerCase()
+        .includes(value)
+        ? "block"
+        : "none";
+    });
+  });
+
+  // ENTER = SCROLL TO FIRST VISIBLE
+  searchInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      const firstVisible = [...menuItems].find(
+        item => item.style.display !== "none"
+      );
+      if (firstVisible) firstVisible.click();
+    }
+  });
+
+  // CLICK → SCROLL
+  menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      document
+        .getElementById(item.dataset.target)
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  /* ACCORDION (unchanged) */
+  document.querySelectorAll(".chapter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      btn.nextElementSibling.classList.toggle("open");
+    });
+  });
+</script>
+
+
+</body>
+</html>
