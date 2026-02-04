@@ -6,15 +6,20 @@
   --card: #1b1b1b;
 }
 
+/* =======================
+   RESET + GLOBAL
+======================= */
 * {
   box-sizing: border-box;
   font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 body {
   margin: 0;
   background: radial-gradient(circle at top, #222, #000);
   color: #f5f5f5;
+  scroll-behavior: smooth;
 }
 
 /* =======================
@@ -22,7 +27,7 @@ body {
 ======================= */
 .hero {
   position: relative;
-  padding: 80px 20px 60px;
+  padding: 100px 20px 80px;
   text-align: center;
   overflow: hidden;
 }
@@ -33,6 +38,19 @@ body {
   background:
     radial-gradient(circle at 30% 20%, rgba(245,196,0,0.25), transparent 40%),
     radial-gradient(circle at 70% 30%, rgba(245,196,0,0.15), transparent 45%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle, rgba(245,196,0,0.12), transparent 60%);
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
 }
 
 .hero-content {
@@ -47,8 +65,10 @@ body {
 
 .hero h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 38px;
+  letter-spacing: 0.5px;
   color: var(--yellow);
+  text-shadow: 0 0 25px rgba(245,196,0,0.35);
 }
 
 .hero p {
@@ -72,9 +92,11 @@ body {
    SIDEBAR
 ======================= */
 .sidebar {
-  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+  background: linear-gradient(180deg, rgba(26,26,26,0.9), rgba(10,10,10,0.9));
+  backdrop-filter: blur(12px);
   border-radius: 18px;
   padding: 22px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
 .sidebar h2 {
@@ -93,50 +115,63 @@ body {
   margin-bottom: 12px;
 }
 
-/* ===== MENU LIST (FIXED) ===== */
+/* MENU LIST */
 #menuList {
-  list-style: none;          /* remove bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 #menuList li {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-
   padding: 10px 14px;
   margin-bottom: 6px;
-
   border-radius: 12px;
   cursor: pointer;
-
-  white-space: nowrap;       /* ⬅ keep ONE line */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
 
-  transition: background 0.2s ease, color 0.2s ease;
+#menuList li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, transparent, rgba(245,196,0,0.12), transparent);
+  opacity: 0;
+}
+
+#menuList li:hover::before {
+  opacity: 1;
 }
 
 #menuList li:hover {
   background: rgba(245,196,0,0.15);
   color: var(--yellow);
+  transform: translateX(4px);
 }
 
 /* =======================
    CONTENT
 ======================= */
 .content {
-  background: linear-gradient(180deg, #1a1a1a, #121212);
+  background: linear-gradient(180deg, rgba(26,26,26,0.95), rgba(12,12,12,0.95));
   border-radius: 22px;
   padding: 40px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 /* =======================
    THEMES
 ======================= */
 .theme {
-  margin-bottom: 100px; /* more breathing space */
+  margin-bottom: 100px;
 }
 
 .theme h2 {
@@ -157,51 +192,79 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 18px 20px;
   background: var(--card);
   border-radius: 16px;
   border: 1px solid #333;
-
   color: var(--yellow-soft);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(245,196,0,0.15),
+    transparent 70%
+  );
+  opacity: 0;
+}
+
+.chapter-btn:hover::after {
+  opacity: 1;
+}
+
+.chapter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
 .toggle-text {
   font-size: 14px;
   opacity: 0.85;
+  font-style: italic;
+  letter-spacing: 0.3px;
 }
 
+/* SMOOTH COLLAPSE */
 .chapter-content {
-  display: none;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
   margin-top: 14px;
-  padding: 22px;
-
+  padding: 0 22px;
   background: #0f0f0f;
   border-left: 4px solid var(--yellow);
   border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgba(245,196,0,0.08);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease, padding 0.3s ease;
 }
 
 .chapter-content.open {
-  display: block;
+  max-height: 800px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 22px;
 }
 
 /* =======================
    RESPONSIVE
 ======================= */
-/* =======================
-   MOBILE OPTIMIZATION
-======================= */
 @media (max-width: 900px) {
 
-  /* HERO tighter */
   .hero {
     padding: 48px 16px 36px;
   }
 
   .hero-icon {
     font-size: 36px;
-    margin-bottom: 6px;
   }
 
   .hero h1 {
@@ -210,10 +273,8 @@ body {
 
   .hero p {
     font-size: 14px;
-    margin-top: 6px;
   }
 
-  /* PAGE layout */
   .page {
     grid-template-columns: 1fr;
     margin: 28px auto;
@@ -221,7 +282,6 @@ body {
     padding: 0 14px;
   }
 
-  /* SIDEBAR */
   .sidebar {
     padding: 16px;
     border-radius: 14px;
@@ -229,7 +289,6 @@ body {
 
   .sidebar h2 {
     font-size: 18px;
-    margin-bottom: 10px;
   }
 
   .sidebar input {
@@ -242,23 +301,19 @@ body {
     font-size: 14px;
   }
 
-  /* CONTENT */
   .content {
     padding: 22px;
     border-radius: 16px;
   }
 
-  /* THEMES */
   .theme {
-    margin-bottom: 60px; /* was 100px */
+    margin-bottom: 60px;
   }
 
   .theme h2 {
     font-size: 22px;
-    margin-bottom: 10px;
   }
 
-  /* CHAPTERS */
   .chapter {
     margin-top: 18px;
   }
@@ -274,7 +329,6 @@ body {
   }
 
   .chapter-content {
-    padding: 16px 18px;
     margin-top: 10px;
     border-radius: 12px;
   }
