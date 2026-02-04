@@ -8,339 +8,310 @@
 </head>
 <body>
 
-<header class="topbar">
-  <h1>Šeštadienis</h1>
+<!-- HERO / HEADER -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-icon">✝️</div>
+    <h1>Šeštadienis</h1>
+    <p>Dvasinis pasiruošimas · Sąžinė · Malda</p>
+  </div>
 </header>
 
 <div class="page">
 
- <aside class="sidebar">
-  <h2>Skyriai</h2>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Skyriai</h2>
 
-  <input
-    type="text"
-    id="themeSearch"
-    placeholder="Ieškoti skyriaus..."
-    autocomplete="off"
-  >
+    <input
+      type="text"
+      id="themeSearch"
+      placeholder="Ieškoti skyriaus..."
+      autocomplete="off"
+    >
 
-  <!-- JS ČIA AUTOMATIŠKAI SUDĖS TEMAS -->
-  <ul id="menuList"></ul>
-</aside>
-
-
+    <ul id="menuList"></ul>
+  </aside>
 
   <!-- CONTENT -->
   <main class="content">
 
+    <!-- ===================== -->
+    <!-- SĄŽINĖS PATIKRINIMAS -->
+    <!-- ===================== -->
     <section class="theme" id="sazines-patikrinimas">
-  <h2>🧠 Sąžinės patikrinimas</h2>
+      <h2>🧠 Sąžinės patikrinimas</h2>
 
-  <!-- DIEVO ATŽVILGIU -->
-  <div class="chapter">
-    <button class="chapter-btn">Nuodėmės Dievo atžvilgiu</button>
-    <div class="chapter-content">
-      <ul>
-        <li>Ar pasitikiu Dievu?</li>
-        <li>Ar praeitoje išpažintyje tyčia nenuslėpiau kokios nors nuodėmės?</li>
-        <li>Ar savo gyvenimu kitiems liudiju Viešpatį?</li>
-        <li>Ar meldžiuosi kasdien? Galbūt meldžiuosi tik tada, kai prispaudžia bėdos? Ar meldžiuosi prieš svarbius apsisprendimus?</li>
-        <li>Ar atpažįstu Dievo veikimą savo ir kitų gyvenime?</li>
-        <li>Ar dalyvauju šv. Mišiose bent sekmadieniais?</li>
-        <li>Ar sekmadieniais nedirbu?</li>
-        <li>Ar suvokiu, jog be svarbios priežasties apleistos šv. Mišios sekmadienį yra nuodėmė?</li>
-        <li>Ar būdamas sunkioje nuodėmėje nepriėmiau Švč. Sakramento (Komunijos)?</li>
-        <li>Ar tariu Dievo vardą su pagarba?</li>
-        <li>
-          Ar neužsiimu burtais, ateities spėjimu ir spiritizmu (dvasių kvietimu)?
-          Ar nesilankau pas būrėjus, ekstrasensus?
-          Ar netikiu horoskopais ir prietarais?
-          Gal tikiu reinkarnacija, likimu?
-          Ar nesinaudoju amuletais, „zodiako“ ženklais?
-        </li>
-        <li>
-          Ar stengiuosi pagilinti savo žinias apie tikėjimo tiesas?
-          Ar stengiuosi pažinti Dievą?
-          Ar skaitau Šventąjį Raštą?
-        </li>
-      </ul>
-    </div>
-  </div>
+      <!-- DIEVO ATŽVILGIU -->
+      <div class="chapter">
+        <button class="chapter-btn">
+          <span>Nuodėmės Dievo atžvilgiu</span>
+          <span class="toggle-text">Rodyti</span>
+        </button>
+        <div class="chapter-content">
+          <ul>
+            <li>Ar pasitikiu Dievu?</li>
+            <li>Ar praeitoje išpažintyje tyčia nenuslėpiau kokios nors nuodėmės?</li>
+            <li>Ar savo gyvenimu kitiems liudiju Viešpatį?</li>
+            <li>Ar meldžiuosi kasdien? Galbūt meldžiuosi tik tada, kai prispaudžia bėdos? Ar meldžiuosi prieš svarbius apsisprendimus?</li>
+            <li>Ar atpažįstu Dievo veikimą savo ir kitų gyvenime?</li>
+            <li>Ar dalyvauju šv. Mišiose bent sekmadieniais?</li>
+            <li>Ar sekmadieniais nedirbu?</li>
+            <li>Ar suvokiu, jog be svarbios priežasties apleistos šv. Mišios sekmadienį yra nuodėmė?</li>
+            <li>Ar būdamas sunkioje nuodėmėje nepriėmiau Švč. Sakramento (Komunijos)?</li>
+            <li>Ar tariu Dievo vardą su pagarba?</li>
+            <li>
+              Ar neužsiimu burtais, ateities spėjimu ir spiritizmu (dvasių kvietimu)?
+              Ar nesilankau pas būrėjus, ekstrasensus?
+              Ar netikiu horoskopais ir prietarais?
+              Gal tikiu reinkarnacija, likimu?
+              Ar nesinaudoju amuletais, „zodiako“ ženklais?
+            </li>
+            <li>
+              Ar stengiuosi pagilinti savo žinias apie tikėjimo tiesas?
+              Ar stengiuosi pažinti Dievą?
+              Ar skaitau Šventąjį Raštą?
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  <!-- ARTIMO ATŽVILGIU -->
-  <div class="chapter">
-    <button class="chapter-btn">Nuodėmės artimo atžvilgiu</button>
-    <div class="chapter-content">
-      <ul>
-        <li>Ar sugebu atleisti, užjausti ir padėti kitam?</li>
-        <li>Ar gerbiu savo tėvus, mokytojus, vyresniuosius?</li>
-        <li>Ar stengiuosi būti kantrus, garbingas, teisingas?</li>
-        <li>
-          Ar mintyse ir kalbėdamas neteisiu savo draugų ir artimųjų?
-          Ar kitų neapkalbu, nešmeižiu?
-          Gal ką nors keikiau ir linkėjau bloga?
-        </li>
-        <li>Ar neišnaudoju, neapgaunu, nežeminu mažesniųjų ir silpnųjų?</li>
-        <li>Ar nesu pavydus, piktas, kerštingas?</li>
-        <li>Ar rūpinuosi vargstančiais, sergančiais ar bėdos ištiktaisiais?</li>
-        <li>Ar nepaskatinu kitų daryti bloga?</li>
-        <li>
-          Ar nesiverčiu nelegalia ir nuodėminga veikla?
-          Ar neužsiimu prekyba narkotikais, vogtais daiktais?
-        </li>
-        <li>
-          Ar kitiems rodau gerą pavyzdį?
-          Ar rengiuosi padoriai?
-          Gal ką nors patraukiau į nuodėmę?
-        </li>
-        <li>Ar neveidmainiauju bendraudamas su savo draugais ir artimaisiais?</li>
-        <li>Ar nemeluoju?</li>
-        <li>Ar paisau išmintingų patarimų?</li>
-        <li>
-          Kaip prisidedu prie atlaidžios, ramios, meilingos nuotaikos kūrimo
-          savo šeimoje, draugų būryje?
-        </li>
-        <li>Ar sugebu atsiprašyti?</li>
-        <li>Ar nesisavinu kitų uždirbto ir įsigyto turto – ar nevagiu?</li>
-        <li>
-          Ar dėl savo naudos lengvabūdiškai nesinaudoju kitų žmonių gerumu ir pasitikėjimu?
-        </li>
-        <li>
-          Gal pasinaudodamas kito jausmais ir pasitikėjimu ieškau intymaus suartėjimo
-          su priešingos ar tos pačios lyties žmogumi?
-        </li>
-        <li>Ar neištvirkauju?</li>
-        <li>
-          Ar pripažįstu, kad intymus ryšys ir lytinė aistra yra Dievo dovana šeimai,
-          o ne malonumų vaikymuisi?
-        </li>
-        <li>
-          Ar priimu Dievo teikiamą gyvybę?
-          Ar nepritariu abortams, kontracepcijai?
-        </li>
-        <li>Ar vairuoju atsakingai?</li>
-      </ul>
-    </div>
-  </div>
+      <!-- ARTIMO ATŽVILGIU -->
+      <div class="chapter">
+        <button class="chapter-btn">
+          <span>Nuodėmės artimo atžvilgiu</span>
+          <span class="toggle-text">Rodyti</span>
+        </button>
+        <div class="chapter-content">
+          <ul>
+            <li>Ar sugebu atleisti, užjausti ir padėti kitam?</li>
+            <li>Ar gerbiu savo tėvus, mokytojus, vyresniuosius?</li>
+            <li>Ar stengiuosi būti kantrus, garbingas, teisingas?</li>
+            <li>
+              Ar mintyse ir kalbėdamas neteisiu savo draugų ir artimųjų?
+              Ar kitų neapkalbu, nešmeižiu?
+              Gal ką nors keikiau ir linkėjau bloga?
+            </li>
+            <li>Ar neišnaudoju, neapgaunu, nežeminu mažesniųjų ir silpnųjų?</li>
+            <li>Ar nesu pavydus, piktas, kerštingas?</li>
+            <li>Ar rūpinuosi vargstančiais, sergančiais ar bėdos ištiktaisiais?</li>
+            <li>Ar nepaskatinu kitų daryti bloga?</li>
+            <li>
+              Ar nesiverčiu nelegalia ir nuodėminga veikla?
+              Ar neužsiimu prekyba narkotikais, vogtais daiktais?
+            </li>
+            <li>
+              Ar kitiems rodau gerą pavyzdį?
+              Ar rengiuosi padoriai?
+              Gal ką nors patraukiau į nuodėmę?
+            </li>
+            <li>Ar neveidmainiauju bendraudamas su savo draugais ir artimaisiais?</li>
+            <li>Ar nemeluoju?</li>
+            <li>Ar paisau išmintingų patarimų?</li>
+            <li>
+              Kaip prisidedu prie atlaidžios, ramios, meilingos nuotaikos kūrimo
+              savo šeimoje, draugų būryje?
+            </li>
+            <li>Ar sugebu atsiprašyti?</li>
+            <li>Ar nesisavinu kitų uždirbto ir įsigyto turto – ar nevagiu?</li>
+            <li>
+              Ar dėl savo naudos lengvabūdiškai nesinaudoju kitų žmonių gerumu ir pasitikėjimu?
+            </li>
+            <li>
+              Gal pasinaudodamas kito jausmais ir pasitikėjimu ieškau intymaus suartėjimo
+              su priešingos ar tos pačios lyties žmogumi?
+            </li>
+            <li>Ar neištvirkauju?</li>
+            <li>
+              Ar pripažįstu, kad intymus ryšys ir lytinė aistra yra Dievo dovana šeimai,
+              o ne malonumų vaikymuisi?
+            </li>
+            <li>
+              Ar priimu Dievo teikiamą gyvybę?
+              Ar nepritariu abortams, kontracepcijai?
+            </li>
+            <li>Ar vairuoju atsakingai?</li>
+          </ul>
+        </div>
+      </div>
 
-  <!-- SAVĘS ATŽVILGIU -->
-  <div class="chapter">
-    <button class="chapter-btn">Nuodėmės savo paties atžvilgiu</button>
-    <div class="chapter-content">
-      <ul>
-        <li>Ar priimu gyvenimą ir save patį kaip Dievo dovaną?</li>
-        <li>Ar nepiktnaudžiauju valgymu, alkoholiu ir rūkymu?</li>
-        <li>
-          Ar nevartoju sveikatą, blaivų protą bei santykius tarp žmonių
-          gniuždančių narkotinių medžiagų?
-        </li>
-        <li>Ar tausoju savo sveikatą?</li>
-        <li>Ar ne per daug rūpinuosi savo išvaizda?</li>
-        <li>Ar jaučiu atsakomybę už kiekvieną savo sąmoningai atliktą veiksmą?</li>
-        <li>
-          Ar išnaudoju laiką savęs ugdymui?
-          Ar nešvaistau laiko veltui?
-          Ar netingiu?
-        </li>
-        <li>Ar skiriu laiko poilsiui?</li>
-        <li>Ar ugdau savo širdies, minčių ir darbų tyrumą?</li>
-        <li>
-          Ar neprarandu gyvenimo džiaugsmo,
-          ar nekyla minčių apie savižudybę?
-        </li>
-        <li>Ar gerbiu savo kūną?</li>
-        <li>
-          Ar turiu kokią nors priklausomybę?
-          Ar neturiu priklausomybės nuo pornografijos,
-          kompiuterinių žaidimų, socialinių tinklų?
-        </li>
-        <li>Ar sąmoningai nenusidedu skaistumui pats su savimi?</li>
-        <li>Galbūt mėgaujuosi nepadoriais vaizdais bei mintimis?</li>
-        <li>Ar nesmerkiu savęs už nesąmoningai padarytus veiksmus?</li>
-        <li>Ar stengiuosi valdyti savo jausmus ir aistras?</li>
-        <li>O gal pasiduodu aklam aistros vedimui?</li>
-        <li>Ar esu nuolankus, romus, ar siekiu ramybės?</li>
-      </ul>
-    </div>
-  </div>
+      <!-- SAVĘS ATŽVILGIU -->
+      <div class="chapter">
+        <button class="chapter-btn">
+          <span>Nuodėmės savo paties atžvilgiu</span>
+          <span class="toggle-text">Rodyti</span>
+        </button>
+        <div class="chapter-content">
+          <ul>
+            <li>Ar priimu gyvenimą ir save patį kaip Dievo dovaną?</li>
+            <li>Ar nepiktnaudžiauju valgymu, alkoholiu ir rūkymu?</li>
+            <li>
+              Ar nevartoju sveikatą, blaivų protą bei santykius tarp žmonių
+              gniuždančių narkotinių medžiagų?
+            </li>
+            <li>Ar tausoju savo sveikatą?</li>
+            <li>Ar ne per daug rūpinuosi savo išvaizda?</li>
+            <li>Ar jaučiu atsakomybę už kiekvieną savo sąmoningai atliktą veiksmą?</li>
+            <li>
+              Ar išnaudoju laiką savęs ugdymui?
+              Ar nešvaistau laiko veltui?
+              Ar netingiu?
+            </li>
+            <li>Ar skiriu laiko poilsiui?</li>
+            <li>Ar ugdau savo širdies, minčių ir darbų tyrumą?</li>
+            <li>
+              Ar neprarandu gyvenimo džiaugsmo,
+              ar nekyla minčių apie savižudybę?
+            </li>
+            <li>Ar gerbiu savo kūną?</li>
+            <li>
+              Ar turiu kokią nors priklausomybę?
+              Ar neturiu priklausomybės nuo pornografijos,
+              kompiuterinių žaidimų, socialinių tinklų?
+            </li>
+            <li>Ar sąmoningai nenusidedu skaistumui pats su savimi?</li>
+            <li>Galbūt mėgaujuosi nepadoriais vaizdais bei mintimis?</li>
+            <li>Ar nesmerkiu savęs už nesąmoningai padarytus veiksmus?</li>
+            <li>Ar stengiuosi valdyti savo jausmus ir aistras?</li>
+            <li>O gal pasiduodu aklam aistros vedimui?</li>
+            <li>Ar esu nuolankus, romus, ar siekiu ramybės?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-</section>
-<section class="theme" id="veni-sancte-spiritus">
-  <h2>🕊️ Veni Sancte Spiritus</h2>
+    <!-- ===================== -->
+    <!-- VENI SANCTE SPIRITUS -->
+    <!-- ===================== -->
+    <section class="theme" id="veni-sancte-spiritus">
+      <h2>🕊️ Veni Sancte Spiritus</h2>
 
-  <!-- LATIN -->
-  <div class="chapter">
-    <button class="chapter-btn">Veni Sancte Spiritus (lotyniškai)</button>
-    <div class="chapter-content">
-      <p>
-        <strong>Veni, Sancte Spiritus,</strong><br>
-        et emitte caelitus<br>
-        lucis tuae radium.<br><br>
+      <div class="chapter">
+        <button class="chapter-btn">
+          <span>Veni Sancte Spiritus (lotyniškai)</span>
+          <span class="toggle-text">Rodyti</span>
+        </button>
+        <div class="chapter-content">
+          <p>
+            <strong>Veni, Sancte Spiritus,</strong><br>
+            et emitte caelitus<br>
+            lucis tuae radium.<br><br>
+            Veni, pater pauperum,<br>
+            veni, dator munerum,<br>
+            veni, lumen cordium.<br><br>
+            Consolator optime,<br>
+            dulcis hospes animae,<br>
+            dulce refrigerium.<br><br>
+            In labore requies,<br>
+            in aestu temperies,<br>
+            in fletu solatium.<br><br>
+            O lux beatissima,<br>
+            reple cordis intima<br>
+            tuorum fidelium.<br><br>
+            Sine tuo numine,<br>
+            nihil est in homine,<br>
+            nihil est innoxium.<br><br>
+            Lava quod est sordidum,<br>
+            riga quod est aridum,<br>
+            sana quod est saucium.<br><br>
+            Flecte quod est rigidum,<br>
+            fove quod est frigidum,<br>
+            rege quod est devium.<br><br>
+            Da tuis fidelibus,<br>
+            in te confidentibus,<br>
+            sacrum septenarium.<br><br>
+            Da virtutis meritum,<br>
+            da salutis exitum,<br>
+            da perenne gaudium. Amen.
+          </p>
+        </div>
+      </div>
 
-        Veni, pater pauperum,<br>
-        veni, dator munerum,<br>
-        veni, lumen cordium.<br><br>
-
-        Consolator optime,<br>
-        dulcis hospes animae,<br>
-        dulce refrigerium.<br><br>
-
-        In labore requies,<br>
-        in aestu temperies,<br>
-        in fletu solatium.<br><br>
-
-        O lux beatissima,<br>
-        reple cordis intima<br>
-        tuorum fidelium.<br><br>
-
-        Sine tuo numine,<br>
-        nihil est in homine,<br>
-        nihil est innoxium.<br><br>
-
-        Lava quod est sordidum,<br>
-        riga quod est aridum,<br>
-        sana quod est saucium.<br><br>
-
-        Flecte quod est rigidum,<br>
-        fove quod est frigidum,<br>
-        rege quod est devium.<br><br>
-
-        Da tuis fidelibus,<br>
-        in te confidentibus,<br>
-        sacrum septenarium.<br><br>
-
-        Da virtutis meritum,<br>
-        da salutis exitum,<br>
-        da perenne gaudium. Amen.
-      </p>
-    </div>
-  </div>
-
-  <!-- LITHUANIAN -->
-  <div class="chapter">
-  <button class="chapter-btn">Ateik, Šventoji Dvasia (lietuviškai)</button>
-  <div class="chapter-content">
-    <p>
-      <strong>DVASIA, VIEŠPATIE, ATEIK,</strong><br>
-      spindulių dangaus mums teik,<br>
-      žemės klystkelius nušviesk.<br><br>
-
-      Tėve vargstančių nuženk,<br>
-      savo dovanas dalink,<br>
-      mūsų dvasią atgaivink!<br><br>
-
-      Sielų Tu ramintojas,<br>
-      svečias atlankytojas,<br>
-      mielas atgaivintojas.<br><br>
-
-      Darbuose Tu – poilsis,<br>
-      kaitroje Tu – atvėsis,<br>
-      Tu – paguoda liūdesy.<br><br>
-
-      O šviesybe amžina,<br>
-      skaidrink sielos gilumą,<br>
-      stiprinki tikėjimą.<br><br>
-
-      Be Tavųjų dovanų<br>
-      viskas žmoguje skurdu,<br>
-      viskas – atvira žaizda.<br><br>
-
-      Nuvalyk, kas sutepta,<br>
-      laistyk, kas išdeginta,<br>
-      gydyk tai, kas sužeista.<br><br>
-
-      Atitrauk mus nuo klaidų,<br>
-      dvasios šalty duok jėgų,<br>
-      tiesink vingius mūs takų.<br><br>
-
-      Duok mums, mylintiems Tave,<br>
-      tikintiems Tava galia,<br>
-      dovanas septynerias.<br><br>
-
-      Duok dorybių atpildą,<br>
-      siųsk laimingą pabaigą,<br>
-      kviesk į džiaugsmą amžiną. Amen.
-    </p>
-  </div>
-</div>
-
-
-</section>
-
-
+      <div class="chapter">
+        <button class="chapter-btn">
+          <span>Ateik, Šventoji Dvasia (lietuviškai)</span>
+          <span class="toggle-text">Rodyti</span>
+        </button>
+        <div class="chapter-content">
+          <p>
+            <strong>DVASIA, VIEŠPATIE, ATEIK,</strong><br>
+            spindulių dangaus mums teik,<br>
+            žemės klystkelius nušviesk.<br><br>
+            Tėve vargstančių nuženk,<br>
+            savo dovanas dalink,<br>
+            mūsų dvasią atgaivink!<br><br>
+            Sielų Tu ramintojas,<br>
+            svečias atlankytojas,<br>
+            mielas atgaivintojas.<br><br>
+            Darbuose Tu – poilsis,<br>
+            kaitroje Tu – atvėsis,<br>
+            Tu – paguoda liūdesy.<br><br>
+            O šviesybe amžina,<br>
+            skaidrink sielos gilumą,<br>
+            stiprinki tikėjimą.<br><br>
+            Be Tavųjų dovanų<br>
+            viskas žmoguje skurdu,<br>
+            viskas – atvira žaizda.<br><br>
+            Nuvalyk, kas sutepta,<br>
+            laistyk, kas išdeginta,<br>
+            gydyk tai, kas sužeista.<br><br>
+            Atitrauk mus nuo klaidų,<br>
+            dvasios šalty duok jėgų,<br>
+            tiesink vingius mūs takų.<br><br>
+            Duok mums, mylintiems Tave,<br>
+            tikintiems Tava galia,<br>
+            dovanas septynerias.<br><br>
+            Duok dorybių atpildą,<br>
+            siųsk laimingą pabaigą,<br>
+            kviesk į džiaugsmą amžiną. Amen.
+          </p>
+        </div>
+      </div>
+    </section>
 
   </main>
 </div>
 
+<!-- ===================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================== -->
 <script>
-  /* ===============================
-     BUILD MENU FROM THEMES
-  =============================== */
-
-  const searchInput = document.getElementById("themeSearch");
+  /* BUILD MENU AUTOMATICALLY */
   const menuList = document.getElementById("menuList");
+  const searchInput = document.getElementById("themeSearch");
 
-  // Read all themes from page
-  const themes = [...document.querySelectorAll(".theme")].map(theme => ({
-    id: theme.id,
-    title: theme.querySelector("h2").innerText
+  const themes = [...document.querySelectorAll(".theme")].map(t => ({
+    id: t.id,
+    title: t.querySelector("h2").innerText
   }));
 
-  // Render menu (optionally filtered)
   function renderMenu(filter = "") {
     menuList.innerHTML = "";
-
     themes
-      .filter(t =>
-        t.title.toLowerCase().includes(filter.toLowerCase())
-      )
+      .filter(t => t.title.toLowerCase().includes(filter.toLowerCase()))
       .forEach(t => {
         const li = document.createElement("li");
         li.textContent = t.title;
-        li.dataset.target = t.id;
-
-        li.addEventListener("click", () => {
-          document
-            .getElementById(t.id)
-            .scrollIntoView({ behavior: "smooth" });
-        });
-
+        li.onclick = () =>
+          document.getElementById(t.id).scrollIntoView({ behavior: "smooth" });
         menuList.appendChild(li);
       });
   }
 
-  // Initial menu load
   renderMenu();
+  searchInput.addEventListener("input", e => renderMenu(e.target.value));
 
-  /* ===============================
-     SEARCH FILTER
-  =============================== */
-
-  searchInput.addEventListener("input", () => {
-    renderMenu(searchInput.value);
-  });
-
-  // ENTER = scroll to first visible
-  searchInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") {
-      const firstItem = menuList.querySelector("li");
-      if (firstItem) firstItem.click();
-    }
-  });
-
-  /* ===============================
-     ACCORDION (UNCHANGED)
-  =============================== */
-
+  /* ACCORDION WITH RODYTI / SLĖPTI */
   document.querySelectorAll(".chapter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
-      btn.nextElementSibling.classList.toggle("open");
+      const content = btn.nextElementSibling;
+      const label = btn.querySelector(".toggle-text");
+      const open = content.classList.toggle("open");
+      label.textContent = open ? "Slėpti" : "Rodyti";
     });
   });
 </script>
-
-
 
 </body>
 </html>
