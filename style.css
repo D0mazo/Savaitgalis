@@ -248,7 +248,7 @@ body {
 }
 
 .chapter-content.open {
-  max-height: 800px;
+  max-height: 5000px; /* arba net 9999px */
   opacity: 1;
   transform: translateY(0);
   padding: 22px;
